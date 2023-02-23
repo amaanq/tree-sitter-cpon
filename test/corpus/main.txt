@@ -1,68 +1,62 @@
 ================================================================================
-Meta1
+Meta
 ================================================================================
 
 <"foo":"bar", 1:<2:"baz">"baz">1
 
---------------------------------------------------------------------------------
+---
 
 (document
-  (meta
-    (mpair
-      (string
-        (string_content))
-      (string
-        (string_content)))
-    (mpair
-      (number)
-      (meta
-        (mpair
-          (number)
-          (string
-            (string_content)))
-      )
-      (string
-        (string_content))))
-  (number)
-)
+  (meta_map
+	(string
+	  (string_content))
+	(string
+	  (string_content))
+	(number)
+	(meta_map
+	  (number)
+	  (string
+		(string_content)))
+	(string
+	  (string_content)))
+  (number))
+
+
 
 ================================================================================
-Meta2
+Meta with weird spacing
 ================================================================================
 
 <
-  "foo":  "bar" 
+  "foo":  "bar"
   1:<
     2: "baz"
   >
     "baz"
 >1
 
---------------------------------------------------------------------------------
+---
 
 (document
-  (meta
-    (mpair
-      (string
-        (string_content))
-      (string
-        (string_content)))
-    (mpair
-      (number)
-      (meta
-        (mpair
-          (number)
-          (string
-            (string_content)))
-      )
-      (string
-        (string_content))))
-  (number)
-)
+  (meta_map
+	(string
+	  (string_content))
+	(string
+	  (string_content))
+	(number)
+	(meta_map
+	  (number)
+	  (string
+		(string_content)))
+	(string
+	  (string_content)))
+  (number))
+
+
 
 =================================================================================
 Array
-================================================================================
+=================================================================================
 
 [
   345,
@@ -84,12 +78,12 @@ Array
   },
 ]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
     (number)
-    (number)
+    (float)
     (number)
     (number)
     (number)
@@ -97,8 +91,8 @@ Array
     (number)
     (number)
     (null)
-    (true)
-    (false)
+    (boolean)
+    (boolean)
     (map
       (pair
         (string (string_content))
@@ -106,32 +100,29 @@ Array
     (imap
       (ipair
         (number)
-        (number)
-      )      
+        (number))
       (ipair
         (number)
-        (string (string_content))
-      )    
-    )
-  )
-)
-  
+        (string (string_content))))))
+
+
+
 =================================================================================
 Array with comment
 ================================================================================
 
 [1,/*2,*/3]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
     (number)
     (comment)
-    (number)
-  )
-)
-  
+    (number)))
+
+
+
 =================================================================================
 DateTime
 ================================================================================
@@ -146,7 +137,7 @@ DateTime
   d"2020-01-23T12:13:14Z"
 ]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
@@ -156,9 +147,9 @@ DateTime
     (datetime)
     (datetime)
     (datetime)
-    (datetime)
-  )
-)
+    (datetime)))
+
+
 
 ================================================================================
 String content
@@ -172,22 +163,24 @@ String content
   "jkl\f"
 ]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
-    (string)
-    (string
-      (string_content))
-    (string
-      (string_content
-        (escape_sequence)))
-    (string
-      (string_content
-        (escape_sequence)))
-    (string
-      (string_content
-        (escape_sequence)))))
+	(string)
+	(string
+	  (string_content))
+	(string
+	  (string_content)
+	  (escape_sequence))
+	(string
+	  (string_content)
+	  (escape_sequence))
+	(string
+	  (string_content)
+	  (escape_sequence))))
+
+
 
 ================================================================================
 Top-level number
@@ -195,13 +188,15 @@ Top-level number
 
 -1
 
---------------------------------------------------------------------------------
+---
 
 (document
   (number))
 
+
+
 ================================================================================
-array of numbers
+Array of numbers
 ================================================================================
 
 [
@@ -210,15 +205,15 @@ array of numbers
   1e23
 ]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
     (number)
     (number)
-    (number)
-  )
-)
+    (float)))
+
+
 
 ================================================================================
 Array of blobs
@@ -231,16 +226,24 @@ Array of blobs
   x"616231"
 ]
 
---------------------------------------------------------------------------------
+---
 
 (document
   (array
-    (escblob)
-    (escblob)
-    (escblob)
-    (hexblob)
-  )
-)
+	(esc_blob
+	  (string_content)
+	  (escape_sequence)
+	  (escape_sequence)
+	  (string_content))
+	(comment)
+	(esc_blob
+	  (string_content))
+	(esc_blob
+	  (string_content)
+	  (escape_sequence))
+	(hex_blob)))
+
+
 
 ================================================================================
 Top-level null
@@ -248,10 +251,12 @@ Top-level null
 
 null
 
---------------------------------------------------------------------------------
+---
 
 (document
   (null))
+
+
 
 ================================================================================
 Comments
@@ -271,24 +276,24 @@ Comments
   "c": 3
 }
 
---------------------------------------------------------------------------------
+---
 
 (document
   (map
-    (pair
-      (string
-        (string_content))
-      (number))
-    (comment)
-    (comment)
-    (comment)
-    (pair
-      (string
-        (string_content))
-      (string
-        (string_content)))
-    (comment)
-    (pair
-      (string
-        (string_content))
-      (number))))
+	(pair
+	  (string
+		(string_content))
+	  (number))
+	(comment)
+	(comment)
+	(comment)
+	(pair
+	  (string
+		(string_content))
+	  (string
+		(string_content)))
+	(comment)
+	(pair
+	  (string
+		(string_content))
+	  (number))))

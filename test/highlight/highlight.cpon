@@ -1,0 +1,51 @@
+// foo
+// <- comment
+
+/* foo */
+// <- comment
+
+"Hello, World! // not a comment\n";
+// <- string
+//                             ^^ string.escape
+
+true
+// <- boolean
+
+false
+// <- boolean
+
+null
+// <- constant.builtin
+
+-123
+// <- number
+
+-12.3e-45
+// <- float
+   123
+// ^^^ number
+   -0x1b23A
+// ^^^^^^^^ number
+   123u
+// ^^^^ number
+   0xA123u
+// ^^^^ number
+
+<    "ahoj": 888 , 123 : 1 >
+// <- punctuation.bracket
+//                         ^ punctuation.bracket
+//   ^^^^^^ string
+//                 ^^^ number
+//         ^ punctuation.delimiter
+//               ^ punctuation.delimiter
+
+{    "ahoj": 888 , "123" : 1, "a":"b"}
+// <- punctuation.bracket
+//                                   ^ punctuation.bracket
+//    ^^^^ string
+//           ^^^ number
+//                  ^^^ string
+//         ^ punctuation.delimiter
+//                         ^ number
+//               ^ punctuation.delimiter
+//                                 ^^^ string
