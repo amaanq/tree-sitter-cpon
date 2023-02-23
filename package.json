@@ -1,29 +1,38 @@
 {
   "name": "tree-sitter-cpon",
   "version": "0.0.1",
-  "description": "cpon grammar for tree-sitter",
+  "description": "ChainPack Object Notation (CPON) grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [
     "parsing",
-    "cpon",
-    "incremental"
+    "lexer",
+    "CPON",
+    "ChainPack Object Notation"
   ],
-  "dependencies": {
-    "nan": "^2.12.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fvacek/tree-sitter-cpon"
-  },
-  "author": "Fanda Vacek",
+  "author": "Fanda Vacek <fvacek@elektroline.cz>",
+  "contributors": [
+    "Amaan Qureshi <amaanq12@gmail.com>"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amaanq/tree-sitter-cpon/issues"
+  },
+  "homepage": "https://github.com/amaanq/tree-sitter-cpon#readme",
   "dependencies": {
     "nan": "^2.14.0"
-  }, "devDependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-google": "^0.14.0",
     "tree-sitter-cli": "^0.20.6"
   },
+  "repository": "https://github.com/amaanq/tree-sitter-cpon",
   "scripts": {
-    "test": "tree-sitter test"
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test && script/parse-examples",
+    "parse": "tree-sitter parse",
+    "test-windows": "tree-sitter test",
+    "lint": "eslint grammar.js"
   },
   "tree-sitter": [
     {
@@ -32,10 +41,10 @@
         "cpon"
       ],
       "highlights": [
-        "queries/vim/highlights.scm"
+        "queries/highlights.scm"
       ],
       "indents": [
-        "queries/vim/indents.scm"
+        "queries/indents.scm"
       ]
     }
   ]
