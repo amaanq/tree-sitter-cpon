@@ -12,19 +12,23 @@
           "named": true
         },
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "datetime",
           "named": true
         },
         {
-          "type": "escblob",
+          "type": "esc_blob",
           "named": true
         },
         {
-          "type": "false",
+          "type": "float",
           "named": true
         },
         {
-          "type": "hexblob",
+          "type": "hex_blob",
           "named": true
         },
         {
@@ -36,7 +40,7 @@
           "named": true
         },
         {
-          "type": "meta",
+          "type": "meta_map",
           "named": true
         },
         {
@@ -50,13 +54,19 @@
         {
           "type": "string",
           "named": true
-        },
-        {
-          "type": "true",
-          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "datetime",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "document",
@@ -71,19 +81,23 @@
           "named": true
         },
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "datetime",
           "named": true
         },
         {
-          "type": "escblob",
+          "type": "esc_blob",
           "named": true
         },
         {
-          "type": "false",
+          "type": "float",
           "named": true
         },
         {
-          "type": "hexblob",
+          "type": "hex_blob",
           "named": true
         },
         {
@@ -95,7 +109,7 @@
           "named": true
         },
         {
-          "type": "meta",
+          "type": "meta_map",
           "named": true
         },
         {
@@ -109,13 +123,33 @@
         {
           "type": "string",
           "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "esc_blob",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
         },
         {
-          "type": "true",
+          "type": "string_content",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "hex_blob",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "imap",
@@ -141,6 +175,10 @@
         "required": true,
         "types": [
           {
+            "type": "float",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           }
@@ -155,19 +193,23 @@
             "named": true
           },
           {
+            "type": "boolean",
+            "named": true
+          },
+          {
             "type": "datetime",
             "named": true
           },
           {
-            "type": "escblob",
+            "type": "esc_blob",
             "named": true
           },
           {
-            "type": "false",
+            "type": "float",
             "named": true
           },
           {
-            "type": "hexblob",
+            "type": "hex_blob",
             "named": true
           },
           {
@@ -179,7 +221,7 @@
             "named": true
           },
           {
-            "type": "meta",
+            "type": "meta_map",
             "named": true
           },
           {
@@ -192,10 +234,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "true",
             "named": true
           }
         ]
@@ -218,28 +256,17 @@
     }
   },
   {
-    "type": "meta",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "mpair",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "mpair",
+    "type": "meta_map",
     "named": true,
     "fields": {
       "key": {
-        "multiple": false,
-        "required": true,
+        "multiple": true,
+        "required": false,
         "types": [
+          {
+            "type": "float",
+            "named": true
+          },
           {
             "type": "number",
             "named": true
@@ -252,10 +279,14 @@
       },
       "value": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "array",
+            "named": true
+          },
+          {
+            "type": "boolean",
             "named": true
           },
           {
@@ -263,15 +294,15 @@
             "named": true
           },
           {
-            "type": "escblob",
+            "type": "esc_blob",
             "named": true
           },
           {
-            "type": "false",
+            "type": "float",
             "named": true
           },
           {
-            "type": "hexblob",
+            "type": "hex_blob",
             "named": true
           },
           {
@@ -283,7 +314,7 @@
             "named": true
           },
           {
-            "type": "meta",
+            "type": "meta_map",
             "named": true
           },
           {
@@ -296,10 +327,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "true",
             "named": true
           }
         ]
@@ -329,19 +356,23 @@
             "named": true
           },
           {
+            "type": "boolean",
+            "named": true
+          },
+          {
             "type": "datetime",
             "named": true
           },
           {
-            "type": "escblob",
+            "type": "esc_blob",
             "named": true
           },
           {
-            "type": "false",
+            "type": "float",
             "named": true
           },
           {
-            "type": "hexblob",
+            "type": "hex_blob",
             "named": true
           },
           {
@@ -353,7 +384,7 @@
             "named": true
           },
           {
-            "type": "meta",
+            "type": "meta_map",
             "named": true
           },
           {
@@ -367,10 +398,6 @@
           {
             "type": "string",
             "named": true
-          },
-          {
-            "type": "true",
-            "named": true
           }
         ]
       }
@@ -381,42 +408,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "string_content",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "string_content",
-    "named": true,
-    "fields": {},
-    "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
           "type": "escape_sequence",
           "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
         }
       ]
     }
-  },
-  {
-    "type": "\t",
-    "named": false
-  },
-  {
-    "type": "\n",
-    "named": false
-  },
-  {
-    "type": " ",
-    "named": false
   },
   {
     "type": "\"",
@@ -447,31 +451,31 @@
     "named": false
   },
   {
+    "type": "b",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
   {
-    "type": "datetime",
-    "named": true
+    "type": "d",
+    "named": false
   },
   {
     "type": "escape_sequence",
     "named": true
   },
   {
-    "type": "escblob",
-    "named": true
-  },
-  {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "float",
     "named": true
   },
   {
-    "type": "hexblob",
-    "named": true
-  },
-  {
-    "type": "i{",
+    "type": "i",
     "named": false
   },
   {
@@ -483,8 +487,16 @@
     "named": true
   },
   {
-    "type": "true",
+    "type": "string_content",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "x",
+    "named": false
   },
   {
     "type": "{",
