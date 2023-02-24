@@ -4,15 +4,15 @@
 (escape_sequence) @string.escape
 
 (hex_blob
-  "x" @symbol
+  "x" @character.special
   (_) @string)
 
 (esc_blob
-  "b" @symbol
+  "b" @character.special
   (_) @string)
 
 (datetime
-  "d" @symbol
+  "d" @character.special
   (_) @string.special)
 
 (number) @number
