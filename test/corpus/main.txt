@@ -8,18 +8,22 @@ Meta
 
 (document
   (meta_map
-	(string
-	  (string_content))
-	(string
-	  (string_content))
-	(number)
-	(meta_map
-	  (number)
-	  (string
-		(string_content)))
-	(string
-	  (string_content)))
-  (number))
+    (meta_pair
+    (string
+      (string_content))
+    (string
+      (string_content))
+    )
+  (meta_pair
+    (number)
+    (meta_map
+      (meta_pair
+      (number)
+      (string
+      (string_content))))
+    (string
+      (string_content))))
+    (number))
 
 
 
@@ -39,17 +43,20 @@ Meta with weird spacing
 
 (document
   (meta_map
-	(string
-	  (string_content))
-	(string
-	  (string_content))
+  (meta_pair
+    (string
+      (string_content))
+    (string
+      (string_content)))
+  (meta_pair
 	(number)
 	(meta_map
+    (meta_pair
 	  (number)
 	  (string
-		(string_content)))
+		(string_content))))
 	(string
-	  (string_content)))
+	  (string_content))))
   (number))
 
 

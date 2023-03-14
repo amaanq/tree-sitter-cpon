@@ -47,3 +47,4 @@
 ; Map keys
 
 (pair key: (_) @keyword)
+(meta_pair key: (_) @keyword)
