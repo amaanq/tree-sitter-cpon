@@ -43,3 +43,7 @@
 ; Errors
 
 (ERROR) @error
+
+; Map keys
+
+(pair key: (_) @keyword)
