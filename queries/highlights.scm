@@ -38,6 +38,9 @@
 
 [ "<" ">" ] @punctuation.bracket
 
+(("\"" @conceal)
+ (#set! conceal ""))
+
 ; Comments
 
 (comment) @comment @spell
