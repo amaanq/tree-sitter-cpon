@@ -22,9 +22,9 @@
     "nan": "^2.14.0"
   },
   "devDependencies": {
-    "eslint": "^8.34.0",
+    "eslint": "^8.40.0",
     "eslint-config-google": "^0.14.0",
-    "tree-sitter-cli": "^0.20.6"
+    "tree-sitter-cli": "^0.20.8"
   },
   "repository": "https://github.com/amaanq/tree-sitter-cpon",
   "scripts": {
@@ -37,6 +37,7 @@
   "tree-sitter": [
     {
       "scope": "source.cpon",
+	  "injection-regex": "cpon",
       "file-types": [
         "cpon"
       ],

@@ -8,7 +8,7 @@ way.)
 
 ```toml
 [dependencies]
-tree-sitter = "~0.20.3"
+tree-sitter = "~0.20.10"
 tree-sitter-cpon = "0.0.2"
 ```
 
@@ -17,9 +17,12 @@ grammar to a tree-sitter [Parser][], and then use the parser to parse some code:
 
 ```rust
 let code = r#"
-    fn double(x: i32) -> i32 {
-        x * 2
-    }
+<
+"nodeTypes":{
+}
+>{
+    "status":<>{}
+}
 "#;
 let mut parser = Parser::new();
 parser.set_language(tree_sitter_cpon::language()).expect("Error loading CPON grammar");
