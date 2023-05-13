@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-cpon",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "ChainPack Object Notation (CPON) grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [
