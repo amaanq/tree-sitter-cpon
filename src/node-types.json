@@ -258,10 +258,25 @@
   {
     "type": "meta_map",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "meta_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "meta_pair",
+    "named": true,
     "fields": {
       "key": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
             "type": "float",
@@ -279,7 +294,7 @@
       },
       "value": {
         "multiple": true,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "array",

@@ -15,6 +15,8 @@
   "d" @character.special
   (_) @string.special)
 
+(_ key: (_) @label)
+
 (number) @number
 
 (float) @float

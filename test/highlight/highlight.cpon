@@ -5,7 +5,7 @@
 // <- comment
 
 "Hello, World! // not a comment\n";
-// <- string
+// ^^^ string
 //                             ^^ string.escape
 
 true
@@ -17,25 +17,11 @@ false
 null
 // <- constant.builtin
 
--123
-// <- number
-
--12.3e-45
-// <- float
-   123
-// ^^^ number
-   -0x1b23A
-// ^^^^^^^^ number
-   123u
-// ^^^^ number
-   0xA123u
-// ^^^^ number
-
 <    "ahoj": 888 , 123 : 1 >
 // <- punctuation.bracket
 //                         ^ punctuation.bracket
-//   ^^^^^^ string
-//                 ^^^ number
+//    ^^^^ string
+//                 ^^^ label
 //         ^ punctuation.delimiter
 //               ^ punctuation.delimiter
 

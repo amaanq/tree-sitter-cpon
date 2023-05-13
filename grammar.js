@@ -41,11 +41,9 @@ module.exports = grammar({
       ),
     ),
 
-    meta_map: $ => seq(
-      '<', optionalCommaSep($._meta_pair), '>',
-    ),
+    meta_map: $ => seq('<', optionalCommaSep($.meta_pair), '>'),
 
-    _meta_pair: $ => seq(
+    meta_pair: $ => seq(
       field('key', choice($.string, $.number, $.float)),
       ':',
       field('value', $._value),
