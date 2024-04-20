@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/tree-sitter-grammars/tree-sitter-cpon/compare/v1.0.0...v1.0.1) (2024-04-20)
+
+
+### Bug Fixes
+
+* **grammar:** adapt to upstream regex change ([594289e](https://github.com/tree-sitter-grammars/tree-sitter-cpon/commit/594289eadfec719198e560f9d7fd243c4db678d5))
+
 ## 1.0.0 (2023-05-13)
 
 
